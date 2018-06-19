@@ -82,6 +82,8 @@ Route::group(['middleware' => 'auth'], function () {
              * // Routes name "admin.users.*"
              */
             Route::resource('users', 'UsersController');
+            Route::resource('categories', 'CategoriesController');
+
         });
     });
 

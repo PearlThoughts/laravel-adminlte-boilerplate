@@ -16,7 +16,7 @@ trait ResourceController
      */
     public function index(Request $request)
     {
-        $this->authorize('viewList', $this->getResourceModel());
+       // $this->authorize('viewList', $this->getResourceModel());
 
         $paginatorData = [];
         $show = (int) $request->input('show', '');
@@ -47,7 +47,7 @@ trait ResourceController
      */
     public function create()
     {
-        $this->authorize('create', $this->getResourceModel());
+        //$this->authorize('create', $this->getResourceModel());
 
         $class = $this->getResourceModel();
         return view('_resources.create', $this->filterCreateViewData([
@@ -68,7 +68,7 @@ trait ResourceController
      */
     public function store(Request $request)
     {
-        $this->authorize('create', $this->getResourceModel());
+       // $this->authorize('create', $this->getResourceModel());
 
         $valuesToSave = $this->getValuesToSave($request);
         $request->merge($valuesToSave);
@@ -107,7 +107,7 @@ trait ResourceController
     {
         $record = $this->getResourceModel()::findOrFail($id);
 
-        $this->authorize('update', $record);
+        //$this->authorize('update', $record);
 
         return view('_resources.edit', $this->filterEditViewData($record, [
             'record' => $record,
@@ -130,7 +130,7 @@ trait ResourceController
     {
         $record = $this->getResourceModel()::findOrFail($id);
 
-        $this->authorize('update', $record);
+        //$this->authorize('update', $record);
 
         $valuesToSave = $this->getValuesToSave($request);
         $request->merge($valuesToSave);
@@ -158,7 +158,7 @@ trait ResourceController
     {
         $record = $this->getResourceModel()::findOrFail($id);
 
-        $this->authorize('delete', $record);
+        //$this->authorize('delete', $record);
 
         if (! $this->checkDestroy($record)) {
             return redirect(route($this->getResourceRoutesAlias().'.index'));
