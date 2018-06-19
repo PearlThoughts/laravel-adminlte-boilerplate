@@ -70,6 +70,7 @@ Route::group(['middleware' => 'auth'], function () {
         /**
          * Admin Access
          */
+        
         Route::group(['middleware' => 'admin'], function () {
             /**
              * Admin Index
@@ -82,6 +83,7 @@ Route::group(['middleware' => 'auth'], function () {
              * // Routes name "admin.users.*"
              */
             Route::resource('users', 'UsersController');
+            Route::resource('tags', 'TagsController');
         });
     });
 

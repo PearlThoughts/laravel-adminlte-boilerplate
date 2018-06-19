@@ -16,7 +16,7 @@ trait ResourceController
      */
     public function index(Request $request)
     {
-        $this->authorize('viewList', $this->getResourceModel());
+        //$this->authorize('viewList', $this->getResourceModel());
 
         $paginatorData = [];
         $show = (int) $request->input('show', '');
