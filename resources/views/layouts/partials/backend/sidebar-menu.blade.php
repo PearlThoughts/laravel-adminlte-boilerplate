@@ -6,6 +6,11 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
     </li>
+    <li class="{{ \App\Utils::checkRoute(['admin::cards.index', 'admin::cards.create']) ? 'active': '' }}">
+        <a href="{{ route('admin::cards.index') }}">
+            <i class="fa fa-book"></i> <span>Cards</span>
+        </a>
+    </li>
     <li class="{{ \App\Utils::checkRoute(['admin::categories.index', 'admin::categories.create']) ? 'active': '' }}">
         <a href="{{ route('admin::categories.index') }}">
             <i class="fa fa-bookmark"></i> <span>Categories</span>
