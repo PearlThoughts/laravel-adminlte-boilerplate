@@ -3,15 +3,12 @@
         <thead>
             <!--<th style="width: 10px;"><button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i></button></th>-->
             <th>#</th>
-            <th>Brand</th>
-            <th>Class</th>
-            <th>Label</th>
-            <th>Dose</th>
-            <th>Indication</th>
-            <th>Dose/Indication</th>
-            <th>Adverse Effect</th>
-            <th>Counselling</th>
-
+            <th>Question</th>
+            <th>Answer</th>
+            <th>Tags</th>
+            <th>Note</th>
+            <th>Display Type</th>
+            <th>Card Type</th>
 
             <th style="width: 100px;">Actions</th>
         </thead>
@@ -31,14 +28,13 @@
                         <a href="{{ $editLink }}">{{ $record->id }}</a>
                     @else {{ $record->id }} @endcan
                 </td>
-                <td>{{ $record->brand->name }}</td>
-                <td>{{ $record->class->name }}</td>
-                <td>{{ $record->getLabels() }}</td>
-                <td>{{ $record->answer->dose }}</td>
-                <td>{{ $record->answer->indication }}</td>
-                <td>{{ $record->answer->dose_indication }}</td>
-                <td>{{ $record->answer->adverse_effect }}</td>
-                <td>{{ $record->answer->counselling }}</td>
+                <td>@include('admin.cards.partials.question', $record)</td>
+                <td>@include('admin.cards.partials.answer', $record)</td>
+                <td>{{ $record->getTags() }}</td>
+                <td>{{ 'WIP' }}</td>
+                <td>{{ $record->getDisplayType() }}</td>
+                <td>{{ $record->getCardType() }}</td>
+
 
 
                 <!-- we will also add show, edit, and delete buttons -->

@@ -11,11 +11,21 @@
             <i class="fa fa-book"></i> <span>Modules</span>
         </a>
     </li>
-    <li class="{{ \App\Utils::checkRoute(['admin::cards.index', 'admin::cards.create']) ? 'active': '' }}">
-        <a href="{{ route('admin::cards.index') }}">
-            <i class="fa fa-book"></i> <span>Cards</span>
-        </a>
+    <li class="treeview active"><a href="#"><i class="fa fa-book"></i><span>Cards</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu menu-open" style="display: block;">
+            <li class="{{ \App\Utils::checkRoute(['admin::cards.index', 'admin::cards.create']) ? 'active': '' }}">
+                <a href="{{ route('admin::cards.index') }}">
+                <i class="fa fa-book"></i> <span>All Cards</span>
+                 </a>
+            </li>
+            <li>
+                <a href="#">
+                <i class="fa fa-book"></i> <span>Deleted Cards</span>
+                 </a>
+            </li>
+        </ul>
     </li>
+
     <li class="{{ \App\Utils::checkRoute(['admin::categories.index', 'admin::categories.create']) ? 'active': '' }}">
         <a href="{{ route('admin::categories.index') }}">
             <i class="fa fa-bookmark"></i> <span>Categories</span>
