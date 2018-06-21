@@ -16,6 +16,11 @@
             <i class="fa fa-bookmark"></i> <span>Categories</span>
         </a>
     </li>
+    <li class="{{ \App\Utils::checkRoute(['admin::tags.index', 'admin::tags.create']) ? 'active': '' }}">
+        <a href="{{ route('admin::tags.index') }}">
+            <i class="fa fa-tag"></i> <span>Tags</span>
+        </a>
+    </li>
     @if (Auth::user()->can('viewList', \App\User::class))
         <li class="{{ \App\Utils::checkRoute(['admin::users.index', 'admin::users.create']) ? 'active': '' }}">
             <a href="{{ route('admin::users.index') }}">

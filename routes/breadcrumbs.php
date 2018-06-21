@@ -51,7 +51,8 @@ Breadcrumbs::register('admin', function ($breadcrumbs) {
 $resources = [
     'users' => 'Users',
     'categories' => 'Categories',
-'cards' => 'Cards'
+    'cards' => 'Cards',
+    'tags' => 'Tags'
 ];
 foreach ($resources as $resource => $data) {
     $parent = 'admin';
