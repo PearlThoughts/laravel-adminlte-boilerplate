@@ -85,7 +85,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::resource('categories', 'CategoriesController');
             Route::resource('cards', 'CardsController');
             Route::resource('tags', 'TagsController');
-
+            Route::resource('decks', 'DecksController');
         });
     });
 

@@ -52,7 +52,9 @@ $resources = [
     'users' => 'Users',
     'categories' => 'Categories',
     'cards' => 'Cards',
-    'tags' => 'Tags'
+    'tags' => 'Tags',
+    'decks' => 'Decks'
+
 ];
 foreach ($resources as $resource => $data) {
     $parent = 'admin';
